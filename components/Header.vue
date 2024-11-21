@@ -20,7 +20,7 @@
                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item ps-3">
-                           <a class="nav-link active" aria-current="page" href="#">Riwayat</a>
+                           <a class="nav-link active" aria-current="page" href="https://absensi-kelas.vercel.app/riwayat">Riwayat</a>
                         </li>
                         <li class="nav-item ps-3">
                            <a class="nav-link active" aria-current="page" href="#">Profile</a>
