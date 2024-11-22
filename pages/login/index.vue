@@ -44,7 +44,7 @@ async function login() {
     })
     if(data) {
         console.log(data)
-        navigateTo('/absensi')
+        navigateTo('/')
     } 
     if(error) throw error
 }
