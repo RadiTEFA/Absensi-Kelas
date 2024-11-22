@@ -17,7 +17,7 @@
                   <div class="isimenu">
                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item ps-3">
-                           <a class="nav-link active" aria-current="page" href="https://absensi-kelas.vercel.app/absensi">Absensi</a>
+                           <a class="nav-link active" aria-current="page" href="/">Absensi</a>
                         </li>
                         <li class="nav-item ps-3">
                            <a class="nav-link active" aria-current="page" href="https://absensi-kelas.vercel.app/riwayat">Riwayat</a>
