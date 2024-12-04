@@ -6,7 +6,7 @@
         <div class="my-3">
           <form @submit.prevent="getCari">
             <div class="input-icon">
-              <input v-model="keyword" type="text" class="form-control rounded-5 bgi" placeholder="Search...">
+              <input v-model="keyword" type="search" class="form-control rounded-5 bgi" placeholder="Search...">
               <i class="bi bi-search"></i>
             </div>
           </form>
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <NuxtLink to="/absensi">
+    <NuxtLink to="/">
       <button class="btn btn-dark btn-lg rounded-5 px-5 tulisan">Kembali</button>
     </NuxtLink>
   </div>
@@ -79,18 +79,24 @@ const getTotalKehadiran = async () => {
   if (count) totalKehadiran.value = count;
 };
 
+// const getCari = async () => {
+//     const { data, error } = await supabase
+//     .from('kehadiran')
+//     .select(`
+//       *,
+//       siswa ( * )
+//     `)
+//     .ilike('kehadiran.siswa', `%${keyword.value}%`)
+//     .or(`siswa.nama.ilike.%${keyword.value}%`)
+//     if(data) kehadiran.value = data
+// }
 const getCari = async () => {
-    const { data, error } = await supabase
+  const { data, error } = await supabase
     .from('kehadiran')
-    .select(`
-      *,
-      keterangan ( * )
-    `)
-    .ilike('kehadiran.siswa', `%${keyword.value}%`)
-    .or(`siswa.nama.ilike.%${keyword.value}%`)
-    if(data) kehadiran.value = data
+    .select(`*, siswa!inner(*), keterangan(*)`)
+    .ilike('siswa.nama', `%${keyword.value}%`)
+  if (data) kehadiran.value = data;
 }
-
 onMounted(() => {
   getKehadiran()
   getTotalKehadiran()
