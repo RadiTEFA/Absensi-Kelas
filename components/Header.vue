@@ -2,17 +2,18 @@
       <nav class="navbar header fixed-top" id="myHeader" style="background-color: #E5B844; height: 10vh;">
             <div class="container-fluid dua">
                <div type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-                  <i style="font-size: 40px" class="bi bi-list"></i>
+                  <i style="font-size: 40px; text-shadow: 1px 1px 0 #000;" class="bi bi-list"></i>
                </div>
                <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-               <div class="offcanvas-header">
+               <div class="offcanvas-header pt-5">
                   <div type="butoon" style="height: 70px" data-bs-dismiss="offcanvas" aria-label="Menu">
-                     <i style="font-size: 40px" class="bi bi-list ps-3"></i>
+                     <i style="font-size: 40px; text-shadow: 1px 1px 0 #000;" class="bi bi-list ps-3"></i>
                   </div>
                   <div class="Text-Menu offcanvas-title" id="staticBackdropLabel">
                      <p><b>Menu</b></p>
                   </div>
                </div>
+               <hr>
                <div class="offcanvas-body">
                   <div class="isimenu">
                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -29,7 +30,7 @@
                   </div>
                </div>
                </div>
-               <div class="p-2"><strong class="tiga">ABSENSI KELAS</strong></div>
+               <div class="p-2"><strong class="tiga">ABSENSI XII DKV 1</strong></div>
                <div class="ms-auto p-2"><img :src="fotoProfil" width="50px" height="50px"></div>
             </div>
          </nav>
