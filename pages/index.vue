@@ -50,7 +50,7 @@ const getKeterangan = async () => {
 };
 
 const getSiswa = async () => {
-  const { data, error } = await supabase.from("siswa").select("*")
+  const { data, error } = await supabase.from("siswa").select("*").eq("level",2)
   if (data) students.value = data
 };
 
