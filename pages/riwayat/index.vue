@@ -60,7 +60,7 @@ async function getKehadiran() {
       *,
       siswa ( * ),
       keterangan ( * )
-    `).order('id', {ascending:false})
+    `)
   if (error) throw error
   if (data) {
     data = data.map(data => {
@@ -87,7 +87,8 @@ const getCari = async () => {
       *,
       siswa!inner ( * ),
       keterangan ( * )
-    `).ilike('siswa.nama', `%${keyword.value}%`)
+    `).order('id', {ascending:false})
+    .ilike('siswa.nama', `%${keyword.value}%`)
   if (error) throw error
   if (data) {
     data = data.map(data => {
