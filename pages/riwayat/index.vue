@@ -53,43 +53,7 @@ const keyword = ref('')
 const totalKehadiran = ref(0);
 const kehadiran = ref([]);
 
-async function getKehadiran() {
-  let { data, error } = await supabase
-    .from('kehadiran')
-    .select(`
-      *,
-      siswa ( * ),
-      keterangan ( * )
-    `).order('id', {ascending:false})
-  if (error) throw error
-  if (data) {
-    data = data.map(data => {
-      const { data: { publicUrl } } = supabase.storage.from('presensi').getPublicUrl(data.foto)
-      return {
-        ...data,
-        foto: publicUrl
-      }
-    })
-    kehadiran.value = data
-  }
-}
-const getTotalKehadiran = async () => {
-  const { count, error } = await supabase.from("kehadiran").select("*, keterangan(*)", { count: 'exact', head: true});
-  if (error) throw error
-  if (count) totalKehadiran.value = count;
-};
 
-// const getCari = async () => {
-//     const { data, error } = await supabase
-//     .from('kehadiran')
-//     .select(`
-//       *,
-//       siswa ( * )
-//     `)
-//     .ilike('kehadiran.siswa', `%${keyword.value}%`)
-//     .or(`siswa.nama.ilike.%${keyword.value}%`)
-//     if(data) kehadiran.value = data
-// }
 const getCari = async () => {
   let { data, error } = await supabase
     .from('kehadiran')
