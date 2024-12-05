@@ -13,8 +13,8 @@
         </div>
         <div class="text-muted JudulMR">Menampilkan {{ kehadiran.length }} dari {{ totalKehadiran }}</div>
         <div class="Table1">
-          <table class="table">
-            <thead>
+          <table class="table table-striped table-hover">
+            <thead class="bold-text">
               <tr>
                 <td>ID</td>
                 <td>NAMA</td>
@@ -158,6 +158,10 @@ hr {
 .Table1{
   padding-left: 2%;
   padding-right: 2%;
+  font-family: 'Times New Roman', Times, serif;
+}
+.bold-text {
+  font-weight: bold;
 }
 .JudulMR{
   padding-left: 2%;
