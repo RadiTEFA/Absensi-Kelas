@@ -197,6 +197,10 @@ hr {
   background-color: antiquewhite;
   text-align: center;
 }
+.bgo::-webkit-input-placeholder {
+    color: black; /* Warna teks placeholder */
+    opacity: 1;   /* Pastikan placeholder terlihat penuh */
+}
 .Table1{
   padding-left: 2%;
   padding-right: 2%;
