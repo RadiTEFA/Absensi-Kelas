@@ -100,7 +100,7 @@ async function getKehadiran() {
       *,
       siswa!inner ( * ),
       keterangan ( * )
-    `)
+    `).order('id', {ascending:false})
   if (error) throw error
   if (data) {
     data = data.map(data => {
