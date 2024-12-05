@@ -5,7 +5,7 @@
       <div class="Inputan">
         <div>
           <label>Nama : </label>
-          <div>
+          <div style="padding-top: 10px;">
             <select v-model="form.siswa" class="form-control form-select" style="width:450px;">
               <option disabled :value="null">Pilih siswa</option>
               <option v-for="student in students" :value="student.id">{{ student.nama }}</option>
@@ -18,7 +18,7 @@
           <input @change="handleFileInput" type="file" accept="image/*">
           <p class="fst-italic">Poto wajib menggunakan Watermark Waktu!</p>
         </div>
-        <div class="Keterangan">
+        <div style="padding-top: 10px;">
           <label>Keterangan : </label>
           <div style="padding-top: 10px;">
             <select v-model="form.keterangan" class="form-control form-select" style="width:450px;">
@@ -103,11 +103,6 @@ onMounted(() => {
 .Inputan {
   margin-top: 7%;
   margin-left: 37%;
-}
-
-.Keterangan {
-  padding-top: 25px;
-  margin-top: 20px;
 }
 
 .KolomKirim {
