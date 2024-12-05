@@ -91,11 +91,24 @@ const getTotalKehadiran = async () => {
 //     if(data) kehadiran.value = data
 // }
 const getCari = async () => {
-  const { data, error } = await supabase
+  let { data, error } = await supabase
     .from('kehadiran')
-    .select(`*, siswa!inner(*), keterangan(*)`)
-    .ilike('siswa.nama', `%${keyword.value}%`)
-  if (data) kehadiran.value = data;
+    .select(`
+      *,
+      siswa!inner ( * ),
+      keterangan ( * )
+    `).ilike('siswa.nama', `%${keyword.value}%`)
+  if (error) throw error
+  if (data) {
+    data = data.map(data => {
+      const { data: { publicUrl } } = supabase.storage.from('presensi').getPublicUrl(data.foto)
+      return {
+        ...data,
+        foto: publicUrl
+      }
+    })
+    kehadiran.value = data
+  }
 }
 onMounted(() => {
   getKehadiran()
