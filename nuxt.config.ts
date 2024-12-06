@@ -1,8 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+
   css: [ "bootstrap/dist/css/bootstrap.min.css",
          "bootstrap-icons/font/bootstrap-icons.min.css"],
+
   app: {
     head:{
       script: [{
@@ -10,9 +12,11 @@ export default defineNuxtConfig({
       }]
     }
   },
-  
+
   supabase: {
     redirect: true
   },
-  modules: ["@nuxtjs/supabase"]
+
+  modules: ["@nuxtjs/supabase"],
+  compatibilityDate: "2024-12-06"
 })
