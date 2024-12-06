@@ -1,8 +1,12 @@
 <template>
   <div class="bg satu">
+    <div class="img">
+      <img src="~/assets/img/smkn-logo.png" class="img-smk" width="50" />
+      <img src="~/assets/img/bg-login.png" class="img-dkv" width="50" />
+    </div>
     <div class="container-fluid">
       <div class="row dua">
-        <div class="col-10 col-sm-6 col-md-6 col-lg-5 col-xl-4">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
           <div class="card bg-d">
             <div class="card-body">
               <h1 class="text-white text-center my-4 JudulLogin">Login</h1>
@@ -67,16 +71,31 @@ async function login() {
 .bg {
   width: 100vw;
   height: 100vh;
-  background: #e5b844 url("~/assets/img/bg-login.png") no-repeat center center
-    fixed;
-  background-size: 30%;
+  background-color: #e5b844;
 }
+
 .card.bg-d {
   background-color: #5e5c5ce8;
 }
 
 .card {
   border-radius: 10px;
+}
+
+.img {
+  display: flex;
+}
+
+.img-smk {
+  opacity: calc(0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.img-dkv {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .btn-warning {
