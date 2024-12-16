@@ -1,3 +1,4 @@
+<template>
   <div class="container-fluid">
       <div class="row dua">
         <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
