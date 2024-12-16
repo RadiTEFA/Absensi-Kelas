@@ -1,23 +1,18 @@
-<template>
-  <div class="bg satu">
-    <div class="img">
-      <img src="~/assets/img/smkn-logo.png" class="img-smk" width="50" />
-      <img src="~/assets/img/bg-login.png" class="img-dkv" width="50" />
-    </div>
-    <div class="container-fluid">
+  <div class="container-fluid">
       <div class="row dua">
         <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
           <div class="card bg-d">
             <div class="card-body">
               <h1 class="text-white text-center my-4 JudulLogin">Login</h1>
               <form @submit.prevent="login">
-                <div class="form-group mb-5 mt-5">
-                  <input
-                    v-model="email"
-                    class="form-control form-control-lg lima"
-                    type="email"
-                    placeholder="Masukkan email"
-                  />
+                <div class="form-group mb-5 mt-5"">
+                  <input 
+                    v-model="email" 
+                    class="form-control form-control-lg lima" 
+                    required autocomplete="off" 
+                    type="email" name="email" 
+                    id="email" />
+                  <label class="label" for="email">Email</label>
                 </div>
                 <div class="form-group mb-5">
                   <input
@@ -45,6 +40,7 @@
 </template>
 
 <script setup>
+
 definePageMeta({
   layout: "login",
   middleware: "auth",
@@ -68,6 +64,8 @@ async function login() {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+  
 .bg {
   width: 100vw;
   height: 100vh;
@@ -101,9 +99,39 @@ async function login() {
 .btn-warning {
   background-color: #e5b844 !important;
 }
-
+.form-group {
+  font-size: 1.25rem;
+  position: relative;
+  --primary: #2196f3;
+}
 .form-control {
   background-color: #c0b9b9e2;
+  all: unset;
+  color: #fefefe;
+  padding: 1rem;
+  border: 1px solid #9e9e9e;
+  border-radius: 10px;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #d4d4d4;
+  pointer-events: none;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-control:focus {
+  border: 1px solid var(--primary);
+}
+
+.form-control:is(:focus, :valid) ~ label {
+  transform: translateY(-120%) scale(0.7);
+  background-color: #1a1a1a;
+  padding-inline: 0.3rem;
+  color: var(--primary);
 }
 
 ::placeholder {
