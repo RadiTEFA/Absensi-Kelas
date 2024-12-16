@@ -5,7 +5,7 @@
             <div class="card-body">
               <h1 class="text-white text-center my-4 JudulLogin">Login</h1>
               <form @submit.prevent="login">
-                <div class="form-group mb-5 mt-5"">
+                <div class="form-group mb-5 mt-5">
                   <input 
                     v-model="email" 
                     class="form-control form-control-lg lima" 
