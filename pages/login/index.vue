@@ -201,6 +201,6 @@ input:focus {
 }
 
 .jarak {
-  padding-right: 35px;
+  padding-right: 40px;
 }
 </style>
