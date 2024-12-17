@@ -16,7 +16,7 @@
                   </div>
                 </div>
                 <div class="form-group mb-5 password">
-                  <input v-model="password" class="form-control form-control-lg lima" type="password" placeholder="Masukkan Password" id="password-input" />
+                  <input v-model="password" class="form-control form-control-lg lima jarak" type="password" placeholder="Masukkan Password" id="password-input" />
                   <div class="eye-password">
                     <i class="bi bi-eye-fill" aria-hidden="true" id="eye-icon"></i>
                   </div>
