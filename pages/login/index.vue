@@ -7,7 +7,7 @@
             <div class="card-body">
               <img src="/assets/img/smkn-logo.png" alt="Logo" class="logo" />
               <img src="/assets/img/Logo-Dkv.png" alt="Logo" class="logodkv" />
-              <h1 class="text-white text-center my-3 JudulLogin">Login</h1>
+              <h1 class="text-white text-center my-2 JudulLogin">Login</h1>
               <form @submit.prevent="login">
                 <div class="form-group mb-5 mt-5">
                   <input v-model="email" class="form-control form-control-lg lima" type="email" placeholder="Masukkan email" />
@@ -84,7 +84,7 @@ onMounted(() => {
 }
 
 .logo {
-  width: 14%;
+  width: 13%;
 }
 
 .logodkv {
