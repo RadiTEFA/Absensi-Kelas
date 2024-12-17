@@ -10,7 +10,7 @@
               <h1 class="text-white text-center my-2 JudulLogin">Login</h1>
               <form @submit.prevent="login">
                 <div class="form-group mb-5 mt-5">
-                  <input v-model="email" class="form-control form-control-lg lima" type="email" placeholder="Masukkan email" />
+                  <input v-model="email" class="form-control form-control-lg lima jarak" type="email" placeholder="Masukkan email" />
                   <div class="eye-password">
                     <i class="bi bi-person-fill" aria-hidden="true" id="person-icon"></i>
                   </div>
@@ -198,5 +198,9 @@ input:focus {
 
 #eye-icon:hover {
   cursor: pointer;
+}
+
+.jarak {
+  padding-right: 35px;
 }
 </style>
