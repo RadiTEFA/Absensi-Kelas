@@ -10,7 +10,7 @@
                 <div class="form-group mb-5 mt-5">
                   <input v-model="email" class="form-control form-control-lg lima" type="email" placeholder="Masukkan email" />
                   <div class="eye-password">
-                    <i class="bi bi-person-fill" aria-hidden="true" id="eye-icon"></i>
+                    <i class="bi bi-person-fill" aria-hidden="true" id="person-icon"></i>
                   </div>
                 </div>
                 <div class="form-group mb-5 password">
@@ -126,7 +126,6 @@ onMounted(() => {
 }
 .empat {
   font-size: 25px;
-  font-family: 'Times New Roman', Times, serif;
 }
 .lima {
   font-family: "Times New Roman", Times, serif;
@@ -176,6 +175,12 @@ input:focus {
 }
 
 #eye-icon {
+  font-size: 20px;
+  color: #777;
+  transition: 0.2s ease;
+}
+
+#person-icon {
   font-size: 20px;
   color: #777;
   transition: 0.2s ease;
