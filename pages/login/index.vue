@@ -84,7 +84,7 @@ onMounted(() => {
 }
 
 .logo {
-  width: 13%;
+  width: 12%;
 }
 
 .logodkv {
