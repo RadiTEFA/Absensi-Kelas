@@ -126,6 +126,7 @@ onMounted(() => {
 }
 .empat {
   font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
 }
 .lima {
   font-family: "Times New Roman", Times, serif;
