@@ -2,7 +2,7 @@
   <div class="bg satu">
     <div class="container-fluid">
       <div class="row dua">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-3">
+        <div class="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-3">
           <div class="card bg-d">
             <div class="card-body">
               <h1 class="text-white text-center my-4 JudulLogin">Login</h1>
