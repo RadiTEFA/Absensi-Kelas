@@ -2,34 +2,25 @@
   <div class="bg satu">
     <div class="container-fluid">
       <div class="row dua">
-        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-3">
           <div class="card bg-d">
             <div class="card-body">
               <h1 class="text-white text-center my-4 JudulLogin">Login</h1>
               <form @submit.prevent="login">
                 <div class="form-group mb-5 mt-5">
-                  <input
-                    v-model="email"
-                    class="form-control form-control-lg lima"
-                    type="email"
-                    placeholder="Masukkan email"
-                  />
+                  <input v-model="email" class="form-control form-control-lg lima" type="email" placeholder="Masukkan email" />
+                  <div class="eye-password">
+                    <i class="bi bi-person-fill" aria-hidden="true" id="eye-icon"></i>
+                  </div>
                 </div>
-                <div class="form-group mb-5">
-                  <input
-                    v-model="password"
-                    class="form-control form-control-lg lima"
-                    type="password"
-                    placeholder="Masukkan Password"
-                  />
+                <div class="form-group mb-5 password">
+                  <input v-model="password" class="form-control form-control-lg lima" type="password" placeholder="Masukkan Password" id="password-input" />
+                  <div class="eye-password">
+                    <i class="bi bi-eye-fill" aria-hidden="true" id="eye-icon"></i>
+                  </div>
                 </div>
                 <div class="d-grid gap-2 mb-5 tiga">
-                  <button
-                    type="submit"
-                    class="btn btn-warning btn-lg text-white empat"
-                  >
-                    Masuk
-                  </button>
+                  <button type="submit" class="btn btn-warning btn-lg text-white empat">Masuk</button>
                 </div>
               </form>
             </div>
@@ -41,6 +32,8 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
+
 definePageMeta({
   layout: "login",
   middleware: "auth",
@@ -61,6 +54,16 @@ async function login() {
   }
   if (error) throw error;
 }
+let eye;
+
+onMounted(() => {
+  const input = document.querySelector("#password-input"); // pastikan input memiliki ID
+  eye = document.querySelector("#eye-icon");
+
+  eye.addEventListener("click", () => {
+    input.type === "password" ? (input.type = "text") : (input.type = "password");
+  });
+});
 </script>
 
 <style scoped>
@@ -123,6 +126,7 @@ async function login() {
 }
 .empat {
   font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
 }
 .lima {
   font-family: "Times New Roman", Times, serif;
@@ -151,5 +155,33 @@ input:focus {
 .btn:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+.form-group {
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+.eye-password {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#eye-icon {
+  font-size: 20px;
+  color: #777;
+  transition: 0.2s ease;
+}
+
+#eye-icon:hover {
+  cursor: pointer;
 }
 </style>
