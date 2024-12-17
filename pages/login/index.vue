@@ -2,9 +2,10 @@
   <div class="bg satu">
     <div class="container-fluid">
       <div class="row dua">
-        <div class="col-10 col-sm-10 col-md-6 col-lg-5 col-xl-3">
+        <div class="col-8 col-sm-8 col-md-6 col-lg-5 col-xl-3">
           <div class="card bg-d">
             <div class="card-body">
+              <img src="/assets/img/smkn-logo.png" alt="Logo" class="logo" />
               <h1 class="text-white text-center my-4 JudulLogin">Login</h1>
               <form @submit.prevent="login">
                 <div class="form-group mb-5 mt-5">
@@ -32,7 +33,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref } from "vue";
 
 definePageMeta({
   layout: "login",
@@ -81,6 +82,10 @@ onMounted(() => {
   border-radius: 10px;
 }
 
+.logo {
+  width: 15%;
+}
+
 .img {
   display: flex;
 }
@@ -126,7 +131,6 @@ onMounted(() => {
 }
 .empat {
   font-size: 25px;
-  font-family: "Times New Roman", Times, serif;
 }
 .lima {
   font-family: "Times New Roman", Times, serif;
